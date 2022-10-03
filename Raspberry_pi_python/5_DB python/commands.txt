@@ -1,0 +1,75 @@
+pip3 install pysqlite3
+pip install paho-mqtt
+
+
+
+SELECT * FROM <table_name> ORDER BY id DESC LIMIT 1 ;
+
+
+
+from datetime import datetime
+import time
+s = "16/08/2013 09:51:43"
+d = datetime.strptime(s, "%d/%m/%Y %H:%M:%S")
+time.mktime(d.timetuple())
+
+create table DHT22_Temperature_Data (
+  id integer primary key autoincrement,
+  SensorID text,
+  Date_n_Time text,
+  Temperature text,
+  Humidity text,
+  Temperature_far text
+);
+
+INSERT INTO COMPANY (id,SensorID ,Date_n_Time,Temperature ,Humidity ,Temperature_far )
+VALUES (1, 'dht11','2009-03-08 00:27:31.807', '30', '45', '95');
+
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);
+
+
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (1, 'Paul', 32, 'California', 20000.00 );
+
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (2, 'Allen', 25, 'Texas', 15000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (3, 'Teddy', 23, 'Norway', 20000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (5, 'David', 27, 'Texas', 85000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (6, 'Kim', 22, 'South-Hall', 45000.00 );
+
+INSERT INTO COMPANY VALUES (7, 'James', 24, 'Houston', 10000.00 );
+
+
+
+
+
+SELECT * FROM COMPANY WHERE AGE >= 25 AND SALARY >= 65000;
+
+SELECT * FROM COMPANY WHERE SALARY = 10000;
+
+
+ SELECT * FROM COMPANY WHERE AGE >= 25 OR SALARY >= 65000;
+
+
+UPDATE COMPANY SET ADDRESS = 'Texas' WHERE ID = 6;
+
+SELECT * FROM COMPANY WHERE AGE IS NOT NULL;
+
+DROP TABLE COMPANY;
